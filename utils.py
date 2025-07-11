@@ -139,16 +139,23 @@ def format_conversation_history(history: list, max_entries: int = 5) -> str:
     """Format conversation history for context"""
     if not history:
         return "No previous conversation."
-    
+
     recent_history = history[-max_entries:]
     formatted = []
-    
+
     for entry in recent_history:
-        if entry.get("type") == "user":
-            formatted.append(f"User: {entry.get('text', '')}")
-        elif entry.get("type") == "assistant":
-            formatted.append(f"Assistant: {entry.get('text', '')}")
-    
+        # Handle both ConversationEntry objects and dictionaries
+        if hasattr(entry, 'type'):  # ConversationEntry object
+            if entry.type == "user":
+                formatted.append(f"User: {entry.text}")
+            elif entry.type == "assistant":
+                formatted.append(f"Assistant: {entry.text}")
+        elif isinstance(entry, dict):  # Dictionary format
+            if entry.get("type") == "user":
+                formatted.append(f"User: {entry.get('text', '')}")
+            elif entry.get("type") == "assistant":
+                formatted.append(f"Assistant: {entry.get('text', '')}")
+
     return "\n".join(formatted)
 
 def check_system_requirements() -> dict:

@@ -2,15 +2,32 @@
 
 A local multimodal AI assistant application that combines vision, speech, and language understanding to create an interactive AI companion that can see, hear, and respond naturally.
 
-## 🚀 Quick Start - Demo Version
+## 🚀 Quick Start Options
 
-**Try the working demo first:**
+### 🌟 Enhanced Version (Recommended)
+**Full-featured app with image upload and voice input:**
+```bash
+./run_enhanced.sh
+# or
+streamlit run enhanced_app.py --server.port 8503
+```
+Then open http://localhost:8503 in your browser.
+
+**Enhanced features:**
+- 📷 **Image Upload**: Upload and analyze any image file
+- 🎤 **Voice Input**: Upload audio files for speech-to-text
+- 🔊 **Audio Responses**: Text-to-speech for all responses
+- 💬 **Smart Conversations**: Context-aware multimodal chat
+- ⚡ **Quick Actions**: One-click analysis buttons
+
+### 📱 Basic Demo Version
+**Simple camera-based demo:**
 ```bash
 streamlit run demo_app.py --server.port 8502
 ```
 Then open http://localhost:8502 in your browser.
 
-The demo includes:
+**Demo features:**
 - 📹 Real-time camera feed
 - 👁️ Basic image analysis
 - 🔊 Text-to-speech responses
@@ -18,13 +35,21 @@ The demo includes:
 
 ## ✨ Features
 
-- **👁️ Visual Understanding**: Real-time camera feed analysis using MLX-VLM
-- **🎤 Speech Recognition**: Local speech-to-text using OpenAI Whisper
-- **🔊 Text-to-Speech**: Natural voice responses using macOS built-in TTS
-- **💬 Conversation Memory**: Persistent conversation history with visual context
-- **🎯 Multimodal Processing**: Combines visual and audio inputs for contextual responses
-- **🖥️ User-Friendly Interface**: Clean Streamlit web interface
-- **🔒 Privacy-First**: Runs entirely locally on your Mac - no external API calls
+### 🌟 Enhanced Version Features
+- **📷 Image Upload**: Upload and analyze JPG, PNG, JPEG, GIF files
+- **🎤 Voice Input**: Upload audio files (WAV, MP3, M4A) for speech-to-text
+- **👁️ Advanced Vision**: MLX-VLM powered image understanding
+- **🔊 Audio Responses**: Text-to-speech for all assistant responses
+- **💬 Smart Conversations**: Context-aware multimodal interactions
+- **⚡ Quick Actions**: One-click buttons for common analysis tasks
+- **🖥️ Intuitive Interface**: Clean, user-friendly Streamlit design
+- **🔒 Privacy-First**: Runs entirely locally - no external API calls
+
+### 📱 Demo Version Features
+- **📹 Camera Feed**: Real-time camera analysis (requires camera)
+- **👁️ Basic Vision**: Simple image analysis and description
+- **🔊 Text-to-Speech**: Spoken responses using system TTS
+- **💬 Conversation History**: Track interactions over time
 
 ## 🛠️ Technical Stack
 
